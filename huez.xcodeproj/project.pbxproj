@@ -161,6 +161,7 @@
 				TargetAttributes = {
 					7754E8F91B066BFF00D5C480 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 8TV6T6N8DG;
 					};
 					7754E90E1B066BFF00D5C480 = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -342,6 +343,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = huez/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -352,6 +354,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = huez/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -411,6 +414,7 @@
 				7754E91B1B066BFF00D5C480 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7754E91C1B066BFF00D5C480 /* Build configuration list for PBXNativeTarget "huezTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +423,7 @@
 				7754E91E1B066BFF00D5C480 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

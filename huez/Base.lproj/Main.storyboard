@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
@@ -61,33 +62,75 @@
                                     </mask>
                                 </variation>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fe8-e4-dWn" userLabel="EditorArea">
+                                <rect key="frame" x="16" y="20" width="568" height="448"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DefaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="9oG-lm-YuU" userLabel="EditImage">
+                                        <rect key="frame" x="28" y="24" width="512" height="340"/>
+                                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RwA-gm-gjb" userLabel="Controls">
+                                        <rect key="frame" x="28" y="372" width="512" height="60"/>
+                                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="nFr-HQ-APX"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.80000001192092896" green="1" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="RwA-gm-gjb" firstAttribute="top" secondItem="9oG-lm-YuU" secondAttribute="bottom" constant="8" id="9x1-T4-Z0H"/>
+                                    <constraint firstItem="9oG-lm-YuU" firstAttribute="top" secondItem="Fe8-e4-dWn" secondAttribute="topMargin" constant="16" id="BxA-lK-FKe"/>
+                                    <constraint firstItem="RwA-gm-gjb" firstAttribute="width" secondItem="Fe8-e4-dWn" secondAttribute="width" multiplier="0.9" id="E6l-Kn-B2j"/>
+                                    <constraint firstAttribute="centerX" secondItem="RwA-gm-gjb" secondAttribute="centerX" id="Woo-rQ-L0z"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="RwA-gm-gjb" secondAttribute="bottom" constant="8" id="eGt-Ya-sId"/>
+                                    <constraint firstAttribute="centerX" secondItem="9oG-lm-YuU" secondAttribute="centerX" id="myX-Zk-tob"/>
+                                    <constraint firstItem="9oG-lm-YuU" firstAttribute="width" secondItem="Fe8-e4-dWn" secondAttribute="width" multiplier="0.9" id="zYf-1t-18k"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Fe8-e4-dWn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="0Zx-3b-7gA"/>
                             <constraint firstItem="wgQ-q6-qOl" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="0xW-Kq-F4O"/>
                             <constraint firstItem="6LQ-Ub-098" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="9fy-H0-Cdb"/>
                             <constraint firstItem="6LQ-Ub-098" firstAttribute="top" secondItem="wgQ-q6-qOl" secondAttribute="bottom" id="CSx-aj-bA4"/>
+                            <constraint firstItem="6LQ-Ub-098" firstAttribute="top" secondItem="Fe8-e4-dWn" secondAttribute="bottom" constant="-112" id="Oia-Gz-miP">
+                                <variation key="heightClass=compact" constant="8"/>
+                            </constraint>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="6LQ-Ub-098" secondAttribute="bottom" id="S08-ld-Wr6"/>
                             <constraint firstAttribute="trailing" secondItem="wgQ-q6-qOl" secondAttribute="trailing" id="UHf-ti-VGb"/>
                             <constraint firstAttribute="centerX" secondItem="wgQ-q6-qOl" secondAttribute="centerX" id="Y6a-fj-3w9"/>
+                            <constraint firstItem="Fe8-e4-dWn" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="nCm-uz-C5x"/>
                             <constraint firstItem="wgQ-q6-qOl" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="256" id="nU4-N7-Jtq">
                                 <variation key="heightClass=compact" constant="0.0"/>
                             </constraint>
                             <constraint firstItem="wgQ-q6-qOl" firstAttribute="height" relation="lessThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="5" id="ocn-I5-0eq"/>
+                            <constraint firstItem="wgQ-q6-qOl" firstAttribute="top" secondItem="Fe8-e4-dWn" secondAttribute="bottom" constant="8" id="tVg-Cx-0LO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Fe8-e4-dWn" secondAttribute="trailing" id="uHn-bL-ytZ"/>
                             <constraint firstAttribute="trailing" secondItem="6LQ-Ub-098" secondAttribute="trailing" id="vst-qJ-bVi"/>
+                            <constraint firstItem="wgQ-q6-qOl" firstAttribute="leading" secondItem="Fe8-e4-dWn" secondAttribute="trailing" constant="-144" id="wVb-j0-In1">
+                                <variation key="heightClass=compact" constant="8"/>
+                            </constraint>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="UHf-ti-VGb"/>
                                 <exclude reference="nU4-N7-Jtq"/>
+                                <exclude reference="wVb-j0-In1"/>
+                                <exclude reference="Oia-Gz-miP"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact">
                             <mask key="constraints">
+                                <exclude reference="uHn-bL-ytZ"/>
                                 <exclude reference="0xW-Kq-F4O"/>
                                 <include reference="UHf-ti-VGb"/>
                                 <exclude reference="Y6a-fj-3w9"/>
                                 <include reference="nU4-N7-Jtq"/>
+                                <exclude reference="tVg-Cx-0LO"/>
+                                <include reference="wVb-j0-In1"/>
+                                <include reference="Oia-Gz-miP"/>
                             </mask>
                         </variation>
                     </view>
@@ -96,4 +139,7 @@
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="DefaultImage" width="483" height="640"/>
+    </resources>
 </document>

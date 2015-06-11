@@ -42,6 +42,7 @@
 		7754E90F1B066BFF00D5C480 /* huezTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = huezTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7754E9141B066BFF00D5C480 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7754E9151B066BFF00D5C480 /* huezTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = huezTests.swift; sourceTree = "<group>"; };
+		77AB57B61B1907D30095AC99 /* huez playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "huez playground.playground"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,12 +84,13 @@
 		7754E8FC1B066BFF00D5C480 /* huez */ = {
 			isa = PBXGroup;
 			children = (
-				7754E8FF1B066BFF00D5C480 /* AppDelegate.swift */,
 				7754E9011B066BFF00D5C480 /* ViewController.swift */,
-				7754E9031B066BFF00D5C480 /* Main.storyboard */,
-				77129D5A1B0A83A60021ABF3 /* FilterViewCell.swift */,
 				77129D5C1B0A842C0021ABF3 /* FilterManager.swift */,
 				77129D5E1B0A84430021ABF3 /* Filter.swift */,
+				7754E8FF1B066BFF00D5C480 /* AppDelegate.swift */,
+				7754E9031B066BFF00D5C480 /* Main.storyboard */,
+				77129D5A1B0A83A60021ABF3 /* FilterViewCell.swift */,
+				77AB57B61B1907D30095AC99 /* huez playground.playground */,
 				7754E9061B066BFF00D5C480 /* Images.xcassets */,
 				7754E9081B066BFF00D5C480 /* LaunchScreen.xib */,
 				7754E8FD1B066BFF00D5C480 /* Supporting Files */,

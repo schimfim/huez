@@ -8,104 +8,142 @@
 
 import UIKit
 
-let NCUBE = 2
+let NCUBE = 4
 let defaultCubeLength = NCUBE*NCUBE*NCUBE
+let defaultFilterImage = UIImage(named: "DefaultImage")
+	
+let SCOPE: Float = 2.0
+
+struct RGB {
+    var r:Float = 0.0
+	var g:Float = 0.0
+	var b:Float = 0.0
+	var a:Float = 1.0
+    
+    init(_ nr:Float, _ ng:Float, _ nb:Float) {
+        r = nr
+        g = ng
+        b = nb
+    }
+    
+    init(h:Float, s:Float, v:Float) {
+    	// convert to rgb
+    	let color = UIColor(hue: CGFloat(h), saturation: CGFloat(s), brightness: CGFloat(v), alpha: CGFloat(1.0))
+    	var nr : CGFloat = 0.0
+    	var ng : CGFloat = 0.0
+    	var nb : CGFloat = 0.0
+    	var na : CGFloat = 0.0
+    	color.getRed(&nr, green:&ng, blue:&nb, alpha:&na)
+        
+        r = Float(nr)
+        g = Float(ng)
+        b = Float(nb)
+    }
+}
 
 class Filter: NSObject {
-	let image: UIImage
-    var cube = [Float](count:defaultCubeLength*4, repeatedValue:0.0)
-    //private var cube : [(Float,Float,Float,Float)]
-    var cubeData: NSData
+	var image: UIImage?
+    var cube = [RGB](count:defaultCubeLength, repeatedValue:RGB(0,0,0))
+	// data structure for CIFilter:cube3d
+    var cubeData: NSData?
 	
 	var filter: CIFilter!
 	
-	private func initCube() {
-        // Generate default cube
-        for b in 0..<NCUBE {
-			for g in 0..<NCUBE {
-				for r in 0..<NCUBE {
-					var idx = 4 * (r + g * NCUBE + b * NCUBE*NCUBE)
-                    cube[idx+0] = Float(r) / Float(NCUBE-1)
-					cube[idx+1] = Float(g) / Float(NCUBE-1)
-					cube[idx+2] = Float(b) / Float(NCUBE-1)
-					cube[idx+3] = Float(1.0)
+	private func fillCubeWithGradient() {
+        for ib in 0..<NCUBE {
+			for ig in 0..<NCUBE {
+				for ir in 0..<NCUBE {
+					var idx = (ir + ig * NCUBE + ib * NCUBE*NCUBE)
+                    cube[idx].r = Float(ir) / Float(NCUBE-1)
+					cube[idx].g = Float(ig) / Float(NCUBE-1)
+					cube[idx].b = Float(ib) / Float(NCUBE-1)
+					cube[idx].a = Float(1.0)
 				}
 			}
 		}
 	}
-	
-	func adaptCube(hsv:[((h:Float, s:Float, v:Float),(h:Float, s:Float, v:Float))]) {
-        var mix = [Float](count:defaultCubeLength*4, repeatedValue:0.0)
-        for i in 0..<defaultCubeLength {
-            var idx = 4 * i
-            let a = mix[idx+3]
-            mix[idx+0] = cube[idx+0]
-            mix[idx+1] = cube[idx+1]
-            mix[idx+2] = cube[idx+2]
-            mix[idx+3] = cube[idx+3]
-        }
 
-        // Adapt cube
-        let r,g,b,alpha : CGFloat
-        var rc,gc,bc : CGFloat
-        r=0;g=0;b=0; alpha=1;
-        rc=0;gc=0;bc=0;
-
-        let len = hsv.count
-        for pattern in hsv {
-            let center = pattern.0
-            let col = pattern.1
-            // convert to rgb
-            let color = UIColor(hue: CGFloat(center.h), saturation: CGFloat(center.s), brightness: CGFloat(center.v), alpha: CGFloat(1.0))
-            color.getRed(&r, green:&g, blue:&b, alpha:&alpha)
-            let cout = UIColor(hue: CGFloat(col.h), saturation: CGFloat(col.s), brightness: CGFloat(col.v), alpha: CGFloat(1.0))
-            cout.getRed(&rc, green:&gc, blue:&bc, alpha:&alpha)
-            let ir = Int(round(Float(r) * Float(NCUBE-1)))
-            let ig = Int(round(Float(g) * Float(NCUBE-1)))
-            let ib = Int(round(Float(b) * Float(NCUBE-1)))
-            var idx = 4 * (ir + ig * NCUBE + ib * NCUBE*NCUBE)
-            mix[idx+0] = Float(rc)
-            mix[idx+1] = Float(gc)
-            mix[idx+2] = Float(bc)
-            mix[idx+3] = Float(1.0)
-
-        }
-        // mix it!
-        for i in 0..<defaultCubeLength {
-        	var idx = 4 * i
-        	let a = mix[idx+3]
-        	/*
-        	cube[idx+0] = cube[idx+0]*(1-a) + mix[idx+0]*a
-        	cube[idx+1] = cube[idx+1]*(1-a) + mix[idx+1]*a
-            cube[idx+2] = cube[idx+2]*(1-a) + mix[idx+2]*a
-            */
-            cube[idx+0] = mix[idx+0]
-        	cube[idx+1] = mix[idx+1]
-            cube[idx+2] = mix[idx+2]
-            cube[idx+3] = mix[idx+3]
-        }
-    }
-    
     func updateCubeData() {
         
         // Create filter structure
-        cubeData = NSData(bytes: cube, length: defaultCubeLength*4*sizeof(Float))
-		filter = CIFilter(name: "CIColorCube")
+        cubeData = NSData(bytes: cube, length: defaultCubeLength * sizeof(RGB))
 	}
 	
 	// MARK: Public interface
 	
-    init(imageName: String, hsv:[((h:Float, s:Float, v:Float),(h:Float, s:Float, v:Float))]) {
-        image =  UIImage(named: imageName)!
-        cubeData = NSData(bytes: cube, length: defaultCubeLength*4*sizeof(Float))
+	// base initializer
+    override init() {
+		filter = CIFilter(name: "CIColorCube")
         super.init()
-        initCube()
-        adaptCube(hsv)
+        fillCubeWithGradient()
         updateCubeData()
 	}
 	
+	convenience init(newCube : [RGB]) {
+		assert(newCube.count == defaultCubeLength, "Invalid cube size")
+        self.init()
+        cube = newCube
+        updateCubeData()
+        
+        // set filterImage
+        image = processUIImage(defaultFilterImage!)
+	}
+    
+    convenience init(mod : (Int, RGB)) {
+        self.init()
+        cube[mod.0] = mod.1
+        updateCubeData()
+        
+        // set filterImage
+        image = processUIImage(defaultFilterImage!)
+    }
+    
+    convenience init(cents : [RGB]) {
+        self.init()
+        
+        for ib in 0..<NCUBE {
+			for ig in 0..<NCUBE {
+				for ir in 0..<NCUBE {
+					let idx = (ir + ig * NCUBE + ib * NCUBE*NCUBE)
+                    var mu = [Float](count: cents.count, repeatedValue: 0.0)
+					var idist = [Float](count: cents.count, repeatedValue: 0.0)
+					let ci = cube[idx]
+                    var sd : Float = 0.0
+					// calc inverse distances
+					for ic in 0..<cents.count {
+						var c = cents[ic]
+						idist[ic] = 1.0 / ( pow(ci.r-c.r,2) + pow(ci.g-c.g,2) + pow(ci.b-c.b,2) )
+                    	sd = sd + powf(idist[ic], SCOPE)
+					}
+					// calc membership
+					for i in 0..<cents.count {
+						mu[i] = powf(idist[i], SCOPE) / sd
+					}
+					// reconstruct
+					var newc = RGB(0,0,0)
+					for i in 0..<cents.count {
+						newc.r += mu[i] * cents[i].r
+						newc.g += mu[i] * cents[i].g
+						newc.b += mu[i] * cents[i].b
+					}
+					cube[idx] = newc
+				}
+			}
+		}
+		
+        updateCubeData()
+        
+        // set filterImage
+        image = processUIImage(defaultFilterImage!)
+    }
+	
+    convenience init(cents ct : [String: RGB]) {
+        let c = [RGB](ct.values)
+        self.init(cents:c)
+    }
+    
 	func getImage()->UIImage {
-		return image
+		return image!
 	}
 	
 	func process(inImage: CIImage) -> CIImage {
@@ -116,4 +154,16 @@ class Filter: NSObject {
 		let outputImage = filter.outputImage
  		return outputImage
 	}
+    
+    // Alot of stuff repeated here...
+    func processUIImage(inImage: UIImage) -> UIImage {
+        let ciImage = CIImage(CGImage: inImage.CGImage)
+        let outputImage = process(ciImage)
+        let context = CIContext(options:nil)
+        let cgimg = context.createCGImage(outputImage, fromRect: outputImage.extent())
+        let newImage = UIImage(CGImage: cgimg, scale: 1.0, orientation:.Up)
+        
+        return newImage!
+    }
+
 }

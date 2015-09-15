@@ -17,6 +17,7 @@
 		7754E90A1B066BFF00D5C480 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7754E9081B066BFF00D5C480 /* LaunchScreen.xib */; };
 		7754E9161B066BFF00D5C480 /* huezTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7754E9151B066BFF00D5C480 /* huezTests.swift */; };
 		779278FD1BA8464C00BCDE58 /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = 779278FC1BA8464C00BCDE58 /* .travis.yml */; };
+		A957FB5F4CAFA49C893C36A8 /* Pods_huez.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77F6FF1A3B8CB3DCF5EE4BC5 /* Pods_huez.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5BF543D72F00882E44C5B131 /* Pods-huez.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-huez.release.xcconfig"; path = "Pods/Target Support Files/Pods-huez/Pods-huez.release.xcconfig"; sourceTree = "<group>"; };
 		77129D5A1B0A83A60021ABF3 /* FilterViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterViewCell.swift; sourceTree = "<group>"; };
 		77129D5C1B0A842C0021ABF3 /* FilterManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterManager.swift; sourceTree = "<group>"; };
 		77129D5E1B0A84430021ABF3 /* Filter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
@@ -45,6 +47,8 @@
 		7754E9151B066BFF00D5C480 /* huezTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = huezTests.swift; sourceTree = "<group>"; };
 		779278FC1BA8464C00BCDE58 /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
 		77AB57B61B1907D30095AC99 /* huez playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "huez playground.playground"; sourceTree = "<group>"; };
+		77F6FF1A3B8CB3DCF5EE4BC5 /* Pods_huez.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_huez.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD4156111BC7AB2FA11FDA2C /* Pods-huez.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-huez.debug.xcconfig"; path = "Pods/Target Support Files/Pods-huez/Pods-huez.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A957FB5F4CAFA49C893C36A8 /* Pods_huez.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +70,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A438D9FE9C3795883AF9F1C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				77F6FF1A3B8CB3DCF5EE4BC5 /* Pods_huez.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7754E8F11B066BFF00D5C480 = {
 			isa = PBXGroup;
 			children = (
@@ -72,6 +85,8 @@
 				7754E8FC1B066BFF00D5C480 /* huez */,
 				7754E9121B066BFF00D5C480 /* huezTests */,
 				7754E8FB1B066BFF00D5C480 /* Products */,
+				F9E7FAD14B30C66B7C51A7FA /* Pods */,
+				3A438D9FE9C3795883AF9F1C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -126,6 +141,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		F9E7FAD14B30C66B7C51A7FA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FD4156111BC7AB2FA11FDA2C /* Pods-huez.debug.xcconfig */,
+				5BF543D72F00882E44C5B131 /* Pods-huez.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -133,9 +157,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7754E9191B066BFF00D5C480 /* Build configuration list for PBXNativeTarget "huez" */;
 			buildPhases = (
+				88A47E0A6DB0A29A2F882069 /* Check Pods Manifest.lock */,
 				7754E8F61B066BFF00D5C480 /* Sources */,
 				7754E8F71B066BFF00D5C480 /* Frameworks */,
 				7754E8F81B066BFF00D5C480 /* Resources */,
+				63DF0CA6EC8BDC7DFA58798D /* Embed Pods Frameworks */,
+				4800B17BDE2B9CE14A00C49A /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -222,6 +249,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4800B17BDE2B9CE14A00C49A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-huez/Pods-huez-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		63DF0CA6EC8BDC7DFA58798D /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-huez/Pods-huez-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		88A47E0A6DB0A29A2F882069 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7754E8F61B066BFF00D5C480 /* Sources */ = {
@@ -359,6 +434,7 @@
 		};
 		7754E91A1B066BFF00D5C480 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD4156111BC7AB2FA11FDA2C /* Pods-huez.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -370,6 +446,7 @@
 		};
 		7754E91B1B066BFF00D5C480 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5BF543D72F00882E44C5B131 /* Pods-huez.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

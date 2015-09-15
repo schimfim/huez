@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Fabric
 
 let NCUBE = 4
 let defaultCubeLength = NCUBE*NCUBE*NCUBE

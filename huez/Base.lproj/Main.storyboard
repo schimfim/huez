@@ -88,15 +88,25 @@
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fe8-e4-dWn" userLabel="EditorArea">
                                 <rect key="frame" x="16" y="20" width="568" height="448"/>
                                 <subviews>
-                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DefaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="9oG-lm-YuU" userLabel="EditImage">
-                                        <rect key="frame" x="28" y="24" width="512" height="340"/>
-                                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <gestureRecognizers/>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fdf-UD-vAi">
+                                        <rect key="frame" x="8" y="8" width="552" height="356"/>
+                                        <subviews>
+                                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DefaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="9oG-lm-YuU" userLabel="EditImage">
+                                                <rect key="frame" x="4" y="4" width="483" height="640"/>
+                                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <gestureRecognizers/>
+                                            </imageView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="9oG-lm-YuU" secondAttribute="bottom" constant="4" id="CqN-Pg-xDu"/>
+                                            <constraint firstAttribute="trailing" secondItem="9oG-lm-YuU" secondAttribute="trailing" constant="4" id="U7l-1U-e9G"/>
+                                            <constraint firstItem="9oG-lm-YuU" firstAttribute="leading" secondItem="fdf-UD-vAi" secondAttribute="leading" constant="4" id="fzF-2X-MHm"/>
+                                            <constraint firstItem="9oG-lm-YuU" firstAttribute="top" secondItem="fdf-UD-vAi" secondAttribute="top" constant="4" id="k98-rd-5IA"/>
+                                        </constraints>
                                         <connections>
-                                            <outletCollection property="gestureRecognizers" destination="ceV-oV-yWI" appends="YES" id="KOG-MM-4Jo"/>
-                                            <outletCollection property="gestureRecognizers" destination="3MP-T2-jVb" appends="YES" id="pct-3A-rKh"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="GKI-20-bv8"/>
                                         </connections>
-                                    </imageView>
+                                    </scrollView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RwA-gm-gjb" userLabel="Controls">
                                         <rect key="frame" x="28" y="372" width="512" height="60"/>
                                         <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -107,13 +117,13 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.80000001192092896" green="1" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="RwA-gm-gjb" firstAttribute="top" secondItem="9oG-lm-YuU" secondAttribute="bottom" constant="8" id="9x1-T4-Z0H"/>
-                                    <constraint firstItem="9oG-lm-YuU" firstAttribute="top" secondItem="Fe8-e4-dWn" secondAttribute="topMargin" constant="16" id="BxA-lK-FKe"/>
                                     <constraint firstItem="RwA-gm-gjb" firstAttribute="width" secondItem="Fe8-e4-dWn" secondAttribute="width" multiplier="0.9" id="E6l-Kn-B2j"/>
+                                    <constraint firstAttribute="trailing" secondItem="fdf-UD-vAi" secondAttribute="trailing" constant="8" id="I8j-Zy-lJz"/>
+                                    <constraint firstItem="fdf-UD-vAi" firstAttribute="leading" secondItem="Fe8-e4-dWn" secondAttribute="leading" constant="8" id="KgE-sC-0tv"/>
                                     <constraint firstAttribute="centerX" secondItem="RwA-gm-gjb" secondAttribute="centerX" id="Woo-rQ-L0z"/>
+                                    <constraint firstItem="RwA-gm-gjb" firstAttribute="top" secondItem="fdf-UD-vAi" secondAttribute="bottom" constant="8" id="ZNm-3v-kBi"/>
                                     <constraint firstAttribute="bottomMargin" secondItem="RwA-gm-gjb" secondAttribute="bottom" constant="8" id="eGt-Ya-sId"/>
-                                    <constraint firstAttribute="centerX" secondItem="9oG-lm-YuU" secondAttribute="centerX" id="myX-Zk-tob"/>
-                                    <constraint firstItem="9oG-lm-YuU" firstAttribute="width" secondItem="Fe8-e4-dWn" secondAttribute="width" multiplier="0.9" id="zYf-1t-18k"/>
+                                    <constraint firstItem="fdf-UD-vAi" firstAttribute="top" secondItem="Fe8-e4-dWn" secondAttribute="top" constant="8" id="t5L-Rg-uB7"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -164,6 +174,7 @@
                     </view>
                     <connections>
                         <outlet property="resultImage" destination="9oG-lm-YuU" id="ist-zY-a46"/>
+                        <outlet property="scrollView" destination="fdf-UD-vAi" id="J5T-2Q-oCc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

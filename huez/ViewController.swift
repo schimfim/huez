@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-    
+    @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var resultImage: UIImageView!
     var origImage: UIImage!
     
@@ -20,6 +20,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     	origImage = resultImage.image!
+        scrollView.contentSize = origImage.size
     }
 
     override func didReceiveMemoryWarning() {

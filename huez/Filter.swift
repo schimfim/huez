@@ -142,6 +142,10 @@ class Filter: NSObject {
         self.init(cents:c)
     }
     
+    func addColor(c: RGB) {
+    	//xxx
+    }
+    
 	func getImage()->UIImage {
 		return image!
 	}

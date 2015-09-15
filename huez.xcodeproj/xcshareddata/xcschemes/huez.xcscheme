@@ -72,6 +72,15 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
+      <PostActions>
+         <ExecutionAction
+            ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
+            <ActionContent
+               title = "Run Script"
+               scriptText = "${PODS_ROOT}/Crashlytics/Crashlytics.framework/submit e3047d895d09bd99c7e95e4301f75f6b72cbdeae e98ffbd47f1737ffd38491548c77ff3283bf20e06eb399042cd6d6d30890d15e">
+            </ActionContent>
+         </ExecutionAction>
+      </PostActions>
       <BuildableProductRunnable
          runnableDebuggingMode = "0">
          <BuildableReference

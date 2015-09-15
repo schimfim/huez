@@ -163,6 +163,7 @@
 				7754E8F81B066BFF00D5C480 /* Resources */,
 				63DF0CA6EC8BDC7DFA58798D /* Embed Pods Frameworks */,
 				4800B17BDE2B9CE14A00C49A /* Copy Pods Resources */,
+				779BBC6B1BA8683400BD49D3 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -280,6 +281,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-huez/Pods-huez-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		779BBC6B1BA8683400BD49D3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PODS_ROOT}/Fabric/Fabric.framework/run e3047d895d09bd99c7e95e4301f75f6b72cbdeae e98ffbd47f1737ffd38491548c77ff3283bf20e06eb399042cd6d6d30890d15e";
 		};
 		88A47E0A6DB0A29A2F882069 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

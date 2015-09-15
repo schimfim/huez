@@ -16,6 +16,7 @@
 		7754E9071B066BFF00D5C480 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7754E9061B066BFF00D5C480 /* Images.xcassets */; };
 		7754E90A1B066BFF00D5C480 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7754E9081B066BFF00D5C480 /* LaunchScreen.xib */; };
 		7754E9161B066BFF00D5C480 /* huezTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7754E9151B066BFF00D5C480 /* huezTests.swift */; };
+		779278FD1BA8464C00BCDE58 /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = 779278FC1BA8464C00BCDE58 /* .travis.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		7754E90F1B066BFF00D5C480 /* huezTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = huezTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7754E9141B066BFF00D5C480 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7754E9151B066BFF00D5C480 /* huezTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = huezTests.swift; sourceTree = "<group>"; };
+		779278FC1BA8464C00BCDE58 /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
 		77AB57B61B1907D30095AC99 /* huez playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "huez playground.playground"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,6 +68,7 @@
 		7754E8F11B066BFF00D5C480 = {
 			isa = PBXGroup;
 			children = (
+				779278FC1BA8464C00BCDE58 /* .travis.yml */,
 				7754E8FC1B066BFF00D5C480 /* huez */,
 				7754E9121B066BFF00D5C480 /* huezTests */,
 				7754E8FB1B066BFF00D5C480 /* Products */,
@@ -206,6 +209,7 @@
 			files = (
 				7754E9051B066BFF00D5C480 /* Main.storyboard in Resources */,
 				7754E90A1B066BFF00D5C480 /* LaunchScreen.xib in Resources */,
+				779278FD1BA8464C00BCDE58 /* .travis.yml in Resources */,
 				7754E9071B066BFF00D5C480 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -34,7 +34,7 @@ class FilterManager: NSObject {
         // BWr
         let f2 = Filter(cents: [white_c, black_c, RGB(0.8,0.1,0.1)])
         // BWRGB
-        let f3 = Filter(cents: [RGB(0.0,0.0,0.0), RGB(1.0,1.0,1.0), RGB(1.0,0.0,0.0), RGB(0.0,1.0,0.0), RGB(0.0,0.0,1.0),])
+        let f3 = Filter(cents: [white_c, black_c, red_c, green_c, blue_c])
         // full + blu
         var blu = base
         blu["b"] = blue_c

@@ -5,6 +5,7 @@ xcode_scheme: huez #4
 xcode_sdk: iphonesimulator8.4 #5
 
 before_install: echo 'Hello world'
+
 before_script:
 - echo '*** before_script ***'
 - pwd

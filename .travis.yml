@@ -3,6 +3,8 @@ osx_image: xcode6.4 #2
 xcode_workspace: huez.xcworkspace #3
 xcode_scheme: huez #4
 xcode_sdk: iphonesimulator8.4 #5
+script:
+- xctool -workspace huez.xcworkspace -scheme huez -sdk iphonesimulator8.4 build
 
 before_install: echo 'Hello world'
 after_success: pwd

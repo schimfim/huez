@@ -11,7 +11,7 @@ before_script:
 script:
 - xctool -workspace huez.xcworkspace -scheme huez -sdk iphonesimulator8.4 build
 
-after_success:
+after_script:
 - echo '*** success ***'
 - pwd
 - "ls -l"

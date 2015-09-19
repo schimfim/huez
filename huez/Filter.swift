@@ -54,7 +54,7 @@ class Filter: NSObject {
         for ib in 0..<NCUBE {
 			for ig in 0..<NCUBE {
 				for ir in 0..<NCUBE {
-					var idx = (ir + ig * NCUBE + ib * NCUBE*NCUBE)
+					let idx = (ir + ig * NCUBE + ib * NCUBE*NCUBE)
                     cube[idx].r = Float(ir) / Float(NCUBE-1)
 					cube[idx].g = Float(ig) / Float(NCUBE-1)
 					cube[idx].b = Float(ib) / Float(NCUBE-1)
@@ -112,7 +112,7 @@ class Filter: NSObject {
                     var sd : Float = 0.0
 					// calc inverse distances
 					for ic in 0..<cents.count {
-						var c = cents[ic]
+						let c = cents[ic]
 						idist[ic] = 1.0 / ( pow(ci.r-c.r,2) + pow(ci.g-c.g,2) + pow(ci.b-c.b,2) )
                     	sd = sd + powf(idist[ic], SCOPE)
 					}
@@ -165,7 +165,7 @@ class Filter: NSObject {
         let ciImage = CIImage(CGImage: inImage.CGImage)
         let outputImage = process(ciImage)
         let context = CIContext(options:nil)
-        let cgimg = context.createCGImage(outputImage, fromRect: outputImage.extent())
+        let cgimg = context.createCGImage(outputImage, fromRect: outputImage.extent)
         let newImage = UIImage(CGImage: cgimg, scale: 1.0, orientation:.Up)
         
         return newImage!

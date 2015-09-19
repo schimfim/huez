@@ -12,7 +12,7 @@ class FilterViewCell: UICollectionViewCell {
     
     @IBOutlet var filterImage: UIImageView!
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         let bgView = UIView(frame: bounds)
         bgView.backgroundColor = UIColor.whiteColor()

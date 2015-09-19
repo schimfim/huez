@@ -76,9 +76,9 @@ class FilterManager: NSObject {
 	
 	func processCurrentFilter() -> UIImage {
 		let outputImage = currentFilter.process(inImage!)
-		let cgimg = context.createCGImage(outputImage, fromRect: outputImage.extent())
+		let cgimg = context.createCGImage(outputImage, fromRect: outputImage.extent)
 		let newImage = UIImage(CGImage: cgimg, scale: 1.0, orientation:.Up)
 
-		return newImage!
+		return newImage
 	}
 }

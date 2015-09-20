@@ -67,7 +67,7 @@ class FilterManager: NSObject {
 	}
 	
     func setInImage(newImage : UIImage) {
-		inImage = CIImage(CGImage: newImage.CGImage)
+		inImage = CIImage(CGImage: newImage.CGImage!)
 	}
 	
 	func setCurrentFilter(i: Int) {

@@ -10,6 +10,7 @@
 		77129D5B1B0A83A60021ABF3 /* FilterViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77129D5A1B0A83A60021ABF3 /* FilterViewCell.swift */; };
 		77129D5D1B0A842C0021ABF3 /* FilterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77129D5C1B0A842C0021ABF3 /* FilterManager.swift */; };
 		77129D5F1B0A84430021ABF3 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77129D5E1B0A84430021ABF3 /* Filter.swift */; };
+		7750D3C91BAF4373006456C0 /* fastlane in Resources */ = {isa = PBXBuildFile; fileRef = 7750D3C81BAF4373006456C0 /* fastlane */; settings = {ASSET_TAGS = (); }; };
 		7754E9001B066BFF00D5C480 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7754E8FF1B066BFF00D5C480 /* AppDelegate.swift */; };
 		7754E9021B066BFF00D5C480 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7754E9011B066BFF00D5C480 /* ViewController.swift */; };
 		7754E9051B066BFF00D5C480 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7754E9031B066BFF00D5C480 /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 		77129D5A1B0A83A60021ABF3 /* FilterViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterViewCell.swift; sourceTree = "<group>"; };
 		77129D5C1B0A842C0021ABF3 /* FilterManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterManager.swift; sourceTree = "<group>"; };
 		77129D5E1B0A84430021ABF3 /* Filter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
+		7750D3C81BAF4373006456C0 /* fastlane */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fastlane; sourceTree = "<group>"; };
 		7754E8FA1B066BFF00D5C480 /* huez.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = huez.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7754E8FE1B066BFF00D5C480 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7754E8FF1B066BFF00D5C480 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 		7754E8F11B066BFF00D5C480 = {
 			isa = PBXGroup;
 			children = (
+				7750D3C81BAF4373006456C0 /* fastlane */,
 				779278FC1BA8464C00BCDE58 /* .travis.yml */,
 				7754E8FC1B066BFF00D5C480 /* huez */,
 				7754E9121B066BFF00D5C480 /* huezTests */,
@@ -241,6 +244,7 @@
 				7754E90A1B066BFF00D5C480 /* LaunchScreen.xib in Resources */,
 				779278FD1BA8464C00BCDE58 /* .travis.yml in Resources */,
 				7754E9071B066BFF00D5C480 /* Images.xcassets in Resources */,
+				7750D3C91BAF4373006456C0 /* fastlane in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

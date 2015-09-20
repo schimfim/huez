@@ -157,18 +157,18 @@ class Filter: NSObject {
         filter.setValue(cubeData, forKey: "inputCubeData")
  
 		let outputImage = filter.outputImage
- 		return outputImage
+ 		return outputImage!
 	}
     
     // Alot of stuff repeated here...
     func processUIImage(inImage: UIImage) -> UIImage {
-        let ciImage = CIImage(CGImage: inImage.CGImage)
+        let ciImage = CIImage(CGImage: inImage.CGImage!)
         let outputImage = process(ciImage)
         let context = CIContext(options:nil)
         let cgimg = context.createCGImage(outputImage, fromRect: outputImage.extent)
         let newImage = UIImage(CGImage: cgimg, scale: 1.0, orientation:.Up)
         
-        return newImage!
+        return newImage
     }
 
 }

@@ -41,7 +41,7 @@ platform :ios do
     # use the UDID of the newly created provisioning profile
     # ENV["PROFILE_UDID"] = lane_context[SharedValues::SIGH_UDID]
     # cert
-    # gym(scheme: "huez")
+    gym(scheme: "huez")
 
     #deliver(beta: true)
 

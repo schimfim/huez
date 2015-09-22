@@ -39,7 +39,7 @@ platform :ios do
     sigh(adhoc: true)
 
     # use the UDID of the newly created provisioning profile
-    # ENV["PROFILE_UDID"] = lane_context[SharedValues::SIGH_UDID]
+    ENV["PROFILE_UDID"] = lane_context[SharedValues::SIGH_UDID]
     # cert
     gym(scheme: "huez")
 

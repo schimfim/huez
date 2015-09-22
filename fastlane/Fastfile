@@ -36,11 +36,11 @@ platform :ios do
   desc "Submit a new Beta Build to Apple TestFlight"
   desc "This will also make sure the profile is up to date"
   lane :beta do
-    # sigh(adhoc: true)
+    sigh(adhoc: true)
 
     # use the UDID of the newly created provisioning profile
     # ENV["PROFILE_UDID"] = lane_context[SharedValues::SIGH_UDID]
-    cert
+    # cert
     # gym(scheme: "huez")
 
     #deliver(beta: true)

@@ -18,7 +18,6 @@
 		7754E90A1B066BFF00D5C480 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7754E9081B066BFF00D5C480 /* LaunchScreen.xib */; };
 		7754E9161B066BFF00D5C480 /* huezTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7754E9151B066BFF00D5C480 /* huezTests.swift */; };
 		779278FD1BA8464C00BCDE58 /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = 779278FC1BA8464C00BCDE58 /* .travis.yml */; };
-		A957FB5F4CAFA49C893C36A8 /* Pods_huez.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77F6FF1A3B8CB3DCF5EE4BC5 /* Pods_huez.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,14 +53,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		7754E8F71B066BFF00D5C480 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A957FB5F4CAFA49C893C36A8 /* Pods_huez.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		7754E90C1B066BFF00D5C480 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -160,13 +151,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7754E9191B066BFF00D5C480 /* Build configuration list for PBXNativeTarget "huez" */;
 			buildPhases = (
-				88A47E0A6DB0A29A2F882069 /* Check Pods Manifest.lock */,
 				7754E8F61B066BFF00D5C480 /* Sources */,
-				7754E8F71B066BFF00D5C480 /* Frameworks */,
 				7754E8F81B066BFF00D5C480 /* Resources */,
-				63DF0CA6EC8BDC7DFA58798D /* Embed Pods Frameworks */,
-				4800B17BDE2B9CE14A00C49A /* Copy Pods Resources */,
-				779BBC6B1BA8683400BD49D3 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -257,67 +243,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		4800B17BDE2B9CE14A00C49A /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-huez/Pods-huez-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		63DF0CA6EC8BDC7DFA58798D /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-huez/Pods-huez-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		779BBC6B1BA8683400BD49D3 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "${PODS_ROOT}/Fabric/Fabric.framework/run e3047d895d09bd99c7e95e4301f75f6b72cbdeae e98ffbd47f1737ffd38491548c77ff3283bf20e06eb399042cd6d6d30890d15e";
-		};
-		88A47E0A6DB0A29A2F882069 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7754E8F61B066BFF00D5C480 /* Sources */ = {
@@ -411,7 +336,6 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				// PROVISIONING_PROFILE = "17730bc8-b246-47c1-9a80-c6f49be14d37";
 				PROVISIONING_PROFILE = "$(PROFILE_UDID)";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -452,7 +376,6 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				// PROVISIONING_PROFILE = "17730bc8-b246-47c1-9a80-c6f49be14d37";
 				PROVISIONING_PROFILE = "$(PROFILE_UDID)";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -1,6 +1,0 @@
-framework module Pods_huez {
-  umbrella header "Pods-huez-umbrella.h"
-
-  export *
-  module * { export * }
-}
